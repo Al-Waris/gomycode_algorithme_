@@ -1,0 +1,30 @@
+ALGORITHM phrase
+VAR
+    nombre_mot :=0, nombre_voyelle :=0 : INTEGER;
+    longueur_phrase := "" : CHAR;
+    bool, bool1, bool2 : BOOLEAN;
+
+BEGIN
+    REPEAT
+        Write("Entrez les lettres de votre phrase (Tapez '.' pour terminer): ");
+        Read(longueur_phrase);
+        IF (longueur_phrase = " ") THEN
+            nombre_voyelle := longueur_phrase +1;
+
+        ELSE
+            bool1 := longueur_phrase = "a" OR  longueur_phrase =  "A" OR longueur_phrase = "e" OR longueur_phrase = "E" OR longueur_phrase = "i";
+            bool2 := longueur_phrase =  "I" OR longueur_phrase = "o" OR longueur_phrase = "O" OR longueur_phrase =  "u" OR longueur_phrase =  "U";
+            bool := bool1 OR bool2;
+            IF (bool) THEN
+                nombre_voyelle := nombre_voyelle + 1;
+            END_IF
+        END_IF
+
+    UNTIL (longueur_phrase <> ".")
+    write("la longuer est: ");
+    write(longueur_phrase);
+    write("le nombre de mot est: ");
+    write(nombre_mot);
+    write("le nombre de voyelle est: ");
+    write(nombre_voyelle );
+END
